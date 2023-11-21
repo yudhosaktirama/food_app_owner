@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <item
+        android:id="@+id/pesanan"
+        android:iconTint="@color/white"
+        android:icon="@drawable/baseline_assignment_24"
+        android:title="Pesanan" />
+    <item
+        android:id="@+id/menu"
+        android:iconTint="@color/white"
+        android:icon="@drawable/baseline_menu_book_24"
+        android:title="Menu"
+        app:showAsAction="withText" />
+</menu>
