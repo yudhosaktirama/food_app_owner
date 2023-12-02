@@ -20,5 +20,8 @@ val listMenuMakanan: List<Menu> = listOf(
     Menu(),
     Menu(),
     Menu(),
+    Menu(),
+    Menu(),
+    Menu(),
     Menu()
 )
