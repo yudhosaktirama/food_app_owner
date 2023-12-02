@@ -1,3 +1,21 @@
 package com.example.food_app_owner.Model.Lokal
 
-val listLokal =
+import com.example.food_app_owner.Model.ModelClass.Menu
+import com.example.food_app_owner.Model.ModelClass.Pesanan
+
+val listLokal: List<Pesanan> = listOf(
+    Pesanan(),
+    Pesanan(),
+    Pesanan(),
+    Pesanan(),
+    Pesanan(),
+)
+
+val listMenu: List<Menu> = listOf(
+    Menu(),
+    Menu(),
+    Menu(),
+    Menu(),
+    Menu(),
+    Menu()
+)
