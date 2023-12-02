@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +26,7 @@ import java.awt.font.NumericShaper
 
 class PesananFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
+    lateinit var circularProgress: ProgressBar
     val pesananViewModel: PesananViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,12 +46,13 @@ class PesananFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.pesananRecyclerView)
+        circularProgress = view.findViewById(R.id.progressBar2)
 
         pesananViewModel.listPesanan.observe(viewLifecycleOwner){NewValue ->
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = PesananAdapter(NewValue)
             if (NewValue.size != 0){
-                Log.e("penasaran", pesananViewModel.listPesanan.value!![0].listMakanan[0].namaMakanan)
+               circularProgress.visibility = View.GONE
             }
 
         }
