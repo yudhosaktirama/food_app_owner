@@ -46,12 +46,12 @@
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="412dp"
+        android:layout_height="656dp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:listitem="@layout/layout_pesanan_masuk"/>
+        tools:listitem="@layout/layout_pesanan_masuk" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

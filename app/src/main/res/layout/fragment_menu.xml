@@ -7,12 +7,13 @@
     android:background="#AAA7CC"
     tools:context=".View.Fragment.MenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="ini menu" />
+        android:text="ini menu"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,8 +47,8 @@
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="410dp"
-        android:layout_height="581dp"
+        android:layout_width="417dp"
+        android:layout_height="655dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
