@@ -1,18 +1,31 @@
 package com.example.food_app_owner.View.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food_app_owner.Model.Adapter.PesananAdapter
 import com.example.food_app_owner.Model.Lokal.listLokal
+import com.example.food_app_owner.Model.ModelClass.Pesanan
+import com.example.food_app_owner.Model.ModelClass.pesananUser
 import com.example.food_app_owner.R
+import com.example.food_app_owner.ViewModel.PesananViewModel
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
+import java.awt.font.NumericShaper
 
 class PesananFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
+    val pesananViewModel: PesananViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +45,56 @@ class PesananFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.pesananRecyclerView)
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = PesananAdapter(listLokal)
+        pesananViewModel.listPesanan.observe(viewLifecycleOwner){NewValue ->
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = PesananAdapter(NewValue)
+            if (NewValue.size != 0){
+                Log.e("penasaran", pesananViewModel.listPesanan.value!![0].listMakanan[0].namaMakanan)
+            }
 
+        }
+
+        GlobalScope.launch { getPesanan() }
+
+
+
+
+    }
+
+    suspend fun getPesanan(){
+        try {
+            val firestore = FirebaseFirestore.getInstance()
+            val documentData = firestore.collection("pesanan").get().await()
+            withContext(Dispatchers.IO){
+                documentData?.let {document ->
+                    val listPesanan = document.map {doc ->
+                        val listPesananUser = (doc.get("pesanan_user") as List<Map<String,Any>>).map {pesanan ->
+                            pesananUser(
+                                pesanan["namaMakanan"] as? String?: "",
+                                (pesanan["jumlah"] as? Number)?.toInt() ?: 0,
+                                (pesanan["hargaSatuan"] as? Number)?.toInt() ?: 0,
+                                (pesanan["harga"] as? Number)?.toInt() ?: 0,
+
+                            )
+
+                        }?: emptyList()
+                        Pesanan(doc.id,
+                            doc.getString("nama")?: "",
+                            doc.getString("alamat")?:"",
+                            listPesananUser,
+                            doc.getString("status")?:""
+                        )
+
+                    }
+
+                    pesananViewModel._listPesanan.postValue(listPesanan.toMutableList())
+
+                }
+            }
+
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
 
     }
 }
