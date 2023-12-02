@@ -2,27 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="413dp"
-    android:layout_height="113dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView14"
-            android:layout_width="393dp"
+            android:layout_width="match_parent"
             android:layout_height="84dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/box_rv" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/iconMakanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -33,7 +33,7 @@
             app:srcCompat="@drawable/gambar_makanan" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/namaMakanan"
             android:layout_width="83dp"
             android:layout_height="25dp"
             android:layout_marginStart="120dp"
@@ -46,18 +46,18 @@
             app:layout_constraintVertical_bias="0.508" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/btnEditMakanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-            app:layout_constraintEnd_toStartOf="@+id/imageView17"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
             app:layout_constraintTop_toTopOf="@+id/imageView14"
             app:layout_constraintVertical_bias="0.508"
             app:srcCompat="@drawable/button_edit_delete" />
 
         <ImageView
-            android:id="@+id/imageView17"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
@@ -74,10 +74,10 @@
             android:text="Edit"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-            app:layout_constraintEnd_toEndOf="@+id/imageView16"
-            app:layout_constraintStart_toStartOf="@+id/imageView16"
-            app:layout_constraintTop_toTopOf="@+id/imageView16" />
+            app:layout_constraintBottom_toBottomOf="@+id/btnEditMakanan"
+            app:layout_constraintEnd_toEndOf="@+id/btnEditMakanan"
+            app:layout_constraintStart_toStartOf="@+id/btnEditMakanan"
+            app:layout_constraintTop_toTopOf="@+id/btnEditMakanan" />
 
         <TextView
             android:id="@+id/textView6"
@@ -86,10 +86,10 @@
             android:text="Delete"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-            app:layout_constraintEnd_toEndOf="@+id/imageView17"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEditMakanan"
+            app:layout_constraintEnd_toEndOf="@+id/btnDelete"
             app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="@+id/imageView17"
-            app:layout_constraintTop_toTopOf="@+id/imageView17" />
+            app:layout_constraintStart_toStartOf="@+id/btnDelete"
+            app:layout_constraintTop_toTopOf="@+id/btnDelete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

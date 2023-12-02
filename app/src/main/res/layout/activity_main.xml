@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".View.Activity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.food_app_owner.View.Fragment.PesananFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_height="700dp"
+        android:foregroundGravity="center"
         tools:layout="@layout/fragment_pesanan" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        style="@style/ShapeAppearance.Material3.Corner.Full"
-        android:layout_width="408dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="406dp"
+        android:layout_height="63dp"
+        android:layout_below="@id/fragmentContainerView"
+        android:layout_marginTop="3dp"
         android:background="@color/cardview_dark_background"
         android:fitsSystemWindows="true"
+        android:nestedScrollingEnabled="true"
         app:backgroundTint="#3b376f"
         app:itemIconTint="@color/white"
         app:itemRippleColor="@color/purple_200"
         app:itemTextColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.769"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

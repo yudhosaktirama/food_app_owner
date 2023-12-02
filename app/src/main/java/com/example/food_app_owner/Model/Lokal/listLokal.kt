@@ -9,9 +9,12 @@ val listLokal: List<Pesanan> = listOf(
     Pesanan(),
     Pesanan(),
     Pesanan(),
+    Pesanan(),
+    Pesanan(),
+    Pesanan(),
 )
 
-val listMenu: List<Menu> = listOf(
+val listMenuMakanan: List<Menu> = listOf(
     Menu(),
     Menu(),
     Menu(),
