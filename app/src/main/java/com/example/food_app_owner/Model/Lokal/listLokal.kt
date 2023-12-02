@@ -14,14 +14,5 @@ val listLokal: List<Pesanan> = listOf(
     Pesanan(),
 )
 
-val listMenuMakanan: List<Menu> = listOf(
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu(),
-    Menu()
+val listMenuMakanan: MutableList<Menu> = mutableListOf(
 )
