@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/btnUpStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toTopOf="@id/imageView4" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/detaiPesanRecyclerView"
+        android:id="@+id/detailPesanRecyclerView"
         android:layout_width="350dp"
         android:layout_height="220dp"
         app:layout_constraintBottom_toTopOf="@+id/textView12"

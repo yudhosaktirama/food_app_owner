@@ -5,30 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.Button
+import android.widget.Spinner
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.food_app_owner.Model.Adapter.MenuStrukAdapter
 import com.example.food_app_owner.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailPesananFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DetailPesananFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var MenuStrukAdapter: Adapter
+    lateinit var tvNamaPemesan: TextView
+    lateinit var tvAlamatPemesan: TextView
+    lateinit var tvBiayaPesanan: TextView
+    lateinit var tvBiayaAntar: TextView
+    lateinit var tvTotalBiaya: TextView
+    lateinit var detailPesanRecyclerView: RecyclerView
+    lateinit var btnUpStatus: Button
+    lateinit var spinnerStatus: Spinner
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +37,16 @@ class DetailPesananFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail_pesanan, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailPesananFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailPesananFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        tvNamaPemesan = view.findViewById(R.id.tvNamaPemesan)
+        tvAlamatPemesan = view.findViewById(R.id.tvAlamatPemesan)
+        tvBiayaPesanan = view.findViewById(R.id.tvBiayaPesanan)
+        tvBiayaAntar = view.findViewById(R.id.tvBiayaAntar)
+        tvTotalBiaya = view.findViewById(R.id.tvTotalBiaya)
+
+        detailPesanRecyclerView = view.findViewById(R.id.detailPesanRecyclerView)
+        btnUpStatus = view.findViewById(R.id.btnUpStatus)
+        spinnerStatus = view.findViewById(R.id.spinnerStatus)
     }
 }
