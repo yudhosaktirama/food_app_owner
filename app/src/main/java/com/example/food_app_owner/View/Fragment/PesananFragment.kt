@@ -50,7 +50,7 @@ class PesananFragment : Fragment() {
 
         pesananViewModel.listPesanan.observe(viewLifecycleOwner){NewValue ->
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.adapter = PesananAdapter(NewValue)
+            recyclerView.adapter = PesananAdapter(NewValue,requireActivity().supportFragmentManager,pesananViewModel)
             if (NewValue.size != 0){
                circularProgress.visibility = View.GONE
             }

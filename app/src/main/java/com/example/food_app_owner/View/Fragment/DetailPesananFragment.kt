@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food_app_owner.Model.Adapter.MenuStrukAdapter
 import com.example.food_app_owner.R
+import com.example.food_app_owner.ViewModel.PesananViewModel
 
 class DetailPesananFragment : Fragment() {
     lateinit var MenuStrukAdapter: Adapter
@@ -21,8 +25,9 @@ class DetailPesananFragment : Fragment() {
     lateinit var tvBiayaAntar: TextView
     lateinit var tvTotalBiaya: TextView
     lateinit var detailPesanRecyclerView: RecyclerView
-    lateinit var btnUpStatus: Button
+    lateinit var btnUpStatus: ImageView
     lateinit var spinnerStatus: Spinner
+    val pesananViewModel: PesananViewModel by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,5 +53,10 @@ class DetailPesananFragment : Fragment() {
         detailPesanRecyclerView = view.findViewById(R.id.detailPesanRecyclerView)
         btnUpStatus = view.findViewById(R.id.btnUpStatus)
         spinnerStatus = view.findViewById(R.id.spinnerStatus)
+
+        pesananViewModel.listDetail.observe(viewLifecycleOwner){newValue ->
+            detailPesanRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            detailPesanRecyclerView.adapter = MenuStrukAdapter(newValue,requireContext())
+        }
     }
 }

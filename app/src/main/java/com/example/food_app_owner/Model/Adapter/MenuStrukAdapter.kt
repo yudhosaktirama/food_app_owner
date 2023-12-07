@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food_app_owner.Model.ModelClass.Struk
+import com.example.food_app_owner.Model.ModelClass.pesananUser
 import com.example.food_app_owner.R
 
-class MenuStrukAdapter(val list: List<Struk>, val konteks: Context) : RecyclerView.Adapter<MenuStrukAdapter.MenuStrukViewHolder>() {
+class MenuStrukAdapter(val list: List<pesananUser>, val konteks: Context) : RecyclerView.Adapter<MenuStrukAdapter.MenuStrukViewHolder>() {
     class MenuStrukViewHolder(row: View): RecyclerView.ViewHolder(row) {
         val Menu = row.findViewById<TextView>(R.id.tvMenu)
         val JmlhMenu = row.findViewById<TextView>(R.id.tvJmlhMenu)
@@ -30,9 +31,9 @@ class MenuStrukAdapter(val list: List<Struk>, val konteks: Context) : RecyclerVi
     override fun onBindViewHolder(holder: MenuStrukViewHolder, position: Int) {
         val binding = list[position]
 
-        holder.Menu.text = binding.Menu
-        holder.HrgMenu.text = binding.HrgMenu.toString()
-        holder.JmlhMenu.text = binding.JmlhMenu.toString()
-        holder.SubTotalMenu.text = binding.SubTotalMenu.toString()
+        holder.Menu.text = binding.namaMakanan
+        holder.HrgMenu.text = binding.hargaSatuan.toString()
+        holder.JmlhMenu.text = binding.jumlah.toString()
+        holder.SubTotalMenu.text = binding.harga.toString()
     }
 }
