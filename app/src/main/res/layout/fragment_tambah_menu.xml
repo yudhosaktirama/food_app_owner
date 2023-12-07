@@ -15,14 +15,15 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/box_tambah_menu"
+        android:layout_width="373dp"
+        android:layout_height="506dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/bgaddmenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497" />
 
     <TextView
         android:id="@+id/textView10"
@@ -40,74 +41,76 @@
         android:id="@+id/editMenu"
         android:layout_width="288dp"
         android:layout_height="35dp"
-        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="Masukkan nama menu"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMenu"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editGambar"
         android:layout_width="288dp"
         android:layout_height="35dp"
-        android:layout_marginTop="120dp"
         android:ems="10"
         android:hint="Masukkan file"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGambar"
+        app:layout_constraintTop_toBottomOf="@+id/tvGambar"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editHarga"
         android:layout_width="288dp"
         android:layout_height="35dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Masukkan lama memasak"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHarga"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editLamaMasak"
         android:layout_width="288dp"
         android:layout_height="35dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Masukkan lama memasak"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvLamaMemasak"
+        app:layout_constraintTop_toBottomOf="@+id/tvLamaMemasak"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editDeskripsi"
         android:layout_width="286dp"
         android:layout_height="76dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Masukkan nama menu"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDeskripsi" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/btnSimpan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="92dp"
@@ -115,7 +118,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView9"
         app:layout_constraintHorizontal_bias="0.861"
-        app:layout_constraintStart_toStartOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView11"
@@ -123,20 +128,20 @@
         android:layout_height="wrap_content"
         android:text="Simpan"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnSimpan"
+        app:layout_constraintEnd_toEndOf="@+id/btnSimpan"
+        app:layout_constraintStart_toStartOf="@+id/btnSimpan"
+        app:layout_constraintTop_toTopOf="@+id/btnSimpan" />
 
     <TextView
         android:id="@+id/tvMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-black"
         android:text="Menu"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
@@ -144,48 +149,84 @@
         android:id="@+id/tvGambar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Gambar"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/editMenu" />
 
     <TextView
         android:id="@+id/tvLamaMemasak"
         android:layout_width="110dp"
         android:layout_height="19dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:text="Lama Memasak"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/tvHarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Harga"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/editLamaMasak" />
 
     <TextView
         android:id="@+id/tvDeskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif-black"
         android:text="Deskripsi"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/editHarga" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Kategori"
+        app:layout_constraintStart_toStartOf="@+id/editGambar"
+        app:layout_constraintTop_toBottomOf="@+id/editGambar" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:src="@drawable/purple"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:entries="@array/list_kategori"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.35"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

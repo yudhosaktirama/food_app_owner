@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +16,7 @@ import com.example.food_app_owner.Model.Lokal.listMenuMakanan
 import com.example.food_app_owner.Model.ModelClass.Menu
 import com.example.food_app_owner.R
 import com.example.food_app_owner.ViewModel.MenuViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.*
@@ -22,6 +25,7 @@ import kotlinx.coroutines.tasks.await
 class MenuFragment : Fragment() {
     lateinit var recyclerViewMenu: RecyclerView
     lateinit var circularProges : ProgressBar
+    lateinit var btnAdd: FloatingActionButton
     val menuViewModel: MenuViewModel by activityViewModels()
 
 
@@ -42,6 +46,7 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerViewMenu = view.findViewById(R.id.menuRecyclerView)
         circularProges = view.findViewById(R.id.progressBar)
+        btnAdd = view.findViewById(R.id.floatingActionButton)
 
 
 
@@ -51,6 +56,16 @@ class MenuFragment : Fragment() {
             if (newValue.size != 0){
                 circularProges.visibility = View.GONE
             }
+        }
+
+        btnAdd.setOnClickListener {
+            val transaki  = fragmentManager!!.beginTransaction()
+            val fragmentAdd = TambahMenuFragment()
+            transaki.replace(R.id.fragmentContainerView,fragmentAdd)
+            transaki.addToBackStack(null)
+            transaki.commit()
+
+
         }
 
         GlobalScope.launch { getDataMakanan(view) }
