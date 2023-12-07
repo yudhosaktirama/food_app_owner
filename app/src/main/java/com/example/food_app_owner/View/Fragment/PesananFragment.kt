@@ -85,7 +85,8 @@ class PesananFragment : Fragment() {
                             doc.getString("nama")?: "",
                             doc.getString("alamat")?:"",
                             listPesananUser,
-                            doc.getString("status")?:""
+                            doc.getString("status")?:"",
+                            (doc["harga_total"] as? Number)?.toInt()?:0
                         )
 
                     }

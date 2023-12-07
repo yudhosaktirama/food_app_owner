@@ -5,7 +5,8 @@ data class Pesanan(
     val nama: String = "Yudho",
     val alamat: String = "Jl Raya Ponorogo",
     val listMakanan:List<pesananUser>,
-    val status: String = "Sedang Dibuat"
+    val status: String = "Sedang Dibuat",
+    val hargaTotal: Int = 10000
     )
 
 data class  pesananUser(

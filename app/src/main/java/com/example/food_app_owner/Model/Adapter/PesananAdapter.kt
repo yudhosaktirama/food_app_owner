@@ -49,8 +49,10 @@ class PesananAdapter(val listpesanan: List<Pesanan>,val fragment: FragmentManage
             val transaksi = fragment.beginTransaction()
             val fragmentDetail = DetailPesananFragment()
             val bundle = Bundle()
+            bundle.putString("id",binding.id)
             bundle.putString("nama",binding.nama)
             bundle.putString("alamat",binding.alamat)
+            bundle.putInt("harga",binding.hargaTotal)
             fragmentDetail.arguments = bundle
             transaksi.replace(R.id.fragmentContainerView,fragmentDetail)
             transaksi.addToBackStack(null)
