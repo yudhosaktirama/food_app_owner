@@ -68,6 +68,7 @@ class MenuFragment : Fragment() {
 
         }
 
+
         GlobalScope.launch { getDataMakanan(view) }
 
 
@@ -86,7 +87,8 @@ class MenuFragment : Fragment() {
         withContext(Dispatchers.IO){
             document?.let { document ->
                 val listMakanan = document.map {doc ->
-                    Menu(doc.getString("nama")?:"",
+                    Menu(doc.id,
+                        doc.getString("nama")?:"",
                     doc.getString("gambar")?:"",
                         (doc.get("harga") as? Number)?.toInt() ?:0,
                     doc.getString("lamaMemasak")?:"",

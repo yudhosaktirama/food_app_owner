@@ -34,25 +34,31 @@
 
         <TextView
             android:id="@+id/namaMakanan"
-            android:layout_width="83dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="120dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
             android:text="Nasi Pecel"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-            app:layout_constraintStart_toStartOf="@+id/imageView14"
-            app:layout_constraintTop_toTopOf="@+id/imageView14"
-            app:layout_constraintVertical_bias="0.508" />
+            app:layout_constraintBottom_toBottomOf="@+id/iconMakanan"
+            app:layout_constraintEnd_toStartOf="@+id/btnEditMakanan"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toEndOf="@+id/iconMakanan"
+            app:layout_constraintTop_toTopOf="@+id/iconMakanan"
+            app:layout_constraintVertical_bias="0.13999999" />
 
         <ImageView
             android:id="@+id/btnEditMakanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintBottom_toBottomOf="@+id/namaMakanan"
             app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-            app:layout_constraintTop_toTopOf="@+id/imageView14"
+            app:layout_constraintStart_toEndOf="@+id/namaMakanan"
+            app:layout_constraintTop_toTopOf="@+id/namaMakanan"
             app:layout_constraintVertical_bias="0.508"
             app:srcCompat="@drawable/button_edit_delete" />
 
@@ -60,11 +66,11 @@
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEditMakanan"
             app:layout_constraintEnd_toEndOf="@+id/imageView14"
-            app:layout_constraintTop_toTopOf="@+id/imageView14"
-            app:layout_constraintVertical_bias="0.508"
+            app:layout_constraintTop_toTopOf="@+id/btnEditMakanan"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/button_edit_delete" />
 
         <TextView

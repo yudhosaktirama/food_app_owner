@@ -64,7 +64,7 @@ class TambahMenuFragment : Fragment() {
 
     }
 
-    fun addMenuFirestore() :com.example.food_app_owner.Model.ModelClass.Menu{
+    fun addMenuFirestore() :com.example.food_app_owner.Model.ModelClass.MenuAdd{
         val listku = resources.getStringArray(R.array.list_kategori)
         val menu = etMenu.text.toString()
         val gambar = etGambar.text.toString()
@@ -88,7 +88,7 @@ class TambahMenuFragment : Fragment() {
 
         }
 
-        return com.example.food_app_owner.Model.ModelClass.Menu(menu,gambar,harga,lamaMemasak,kategori,deskripsi)
+        return com.example.food_app_owner.Model.ModelClass.MenuAdd(menu,gambar,harga,lamaMemasak,kategori,deskripsi)
 
     }
 }
