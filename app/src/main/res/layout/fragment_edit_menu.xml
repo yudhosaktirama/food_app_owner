@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragment.TambahMenuFragment">
+    tools:context=".View.Fragment.EditMenuFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Menu Baru"
+        android:text="Edit Menu"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/tambahMenu"
+        android:id="@+id/editMenu"
         android:layout_width="288dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -52,7 +52,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/tambahGambar"
+        android:id="@+id/editGambar"
         android:layout_width="289dp"
         android:layout_height="34dp"
         android:ems="10"
@@ -66,7 +66,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/tambahHarga"
+        android:id="@+id/editHarga"
         android:layout_width="288dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -80,7 +80,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/tambahLamaMasak"
+        android:id="@+id/editLamaMasak"
         android:layout_width="288dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -94,7 +94,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/tambahDeskripsi"
+        android:id="@+id/editDeskripsi"
         android:layout_width="286dp"
         android:layout_height="76dp"
         android:ems="10"
@@ -151,8 +151,8 @@
         android:text="Gambar"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tambahMenu"
-        app:layout_constraintTop_toBottomOf="@+id/tambahMenu" />
+        app:layout_constraintStart_toStartOf="@+id/editMenu"
+        app:layout_constraintTop_toBottomOf="@+id/editMenu" />
 
     <TextView
         android:id="@+id/tvLamaMemasak"
@@ -175,8 +175,8 @@
         android:text="Harga"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tambahLamaMasak"
-        app:layout_constraintTop_toBottomOf="@+id/tambahLamaMasak" />
+        app:layout_constraintStart_toStartOf="@+id/editLamaMasak"
+        app:layout_constraintTop_toBottomOf="@+id/editLamaMasak" />
 
     <TextView
         android:id="@+id/tvDeskripsi"
@@ -185,8 +185,8 @@
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Deskripsi"
-        app:layout_constraintStart_toStartOf="@+id/tambahHarga"
-        app:layout_constraintTop_toBottomOf="@+id/tambahHarga" />
+        app:layout_constraintStart_toStartOf="@+id/editHarga"
+        app:layout_constraintTop_toBottomOf="@+id/editHarga" />
 
     <TextView
         android:id="@+id/textView7"
@@ -195,8 +195,8 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:text="Kategori"
-        app:layout_constraintStart_toStartOf="@+id/tambahGambar"
-        app:layout_constraintTop_toBottomOf="@+id/tambahGambar" />
+        app:layout_constraintStart_toStartOf="@+id/editGambar"
+        app:layout_constraintTop_toBottomOf="@+id/editGambar" />
 
     <ImageView
         android:id="@+id/imageView7"

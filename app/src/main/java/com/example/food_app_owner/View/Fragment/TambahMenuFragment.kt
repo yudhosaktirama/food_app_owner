@@ -37,11 +37,11 @@ class TambahMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        etMenu = view.findViewById(R.id.editMenu)
-        etGambar = view.findViewById(R.id.editGambar)
-        etLamaMemasak = view.findViewById(R.id.editLamaMasak)
-        etHarga = view.findViewById(R.id.editHarga)
-        etDeskripsi = view.findViewById(R.id.editDeskripsi)
+        etMenu = view.findViewById(R.id.tambahMenu)
+        etGambar = view.findViewById(R.id.tambahGambar)
+        etLamaMemasak = view.findViewById(R.id.tambahLamaMasak)
+        etHarga = view.findViewById(R.id.tambahHarga)
+        etDeskripsi = view.findViewById(R.id.tambahDeskripsi)
         dropdown = view.findViewById(R.id.spinner3)
         btnSimpan = view.findViewById(R.id.btnSimpan)
         firestore = FirebaseFirestore.getInstance()
