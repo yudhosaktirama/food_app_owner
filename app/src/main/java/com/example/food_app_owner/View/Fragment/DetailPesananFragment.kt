@@ -16,7 +16,6 @@ import com.example.food_app_owner.ViewModel.PesananViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DetailPesananFragment : Fragment() {
-    lateinit var MenuStrukAdapter: Adapter
     lateinit var tvNamaPemesan: TextView
     lateinit var tvAlamatPemesan: TextView
     lateinit var tvBiayaPesanan: TextView

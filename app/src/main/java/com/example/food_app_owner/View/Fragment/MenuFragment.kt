@@ -52,14 +52,14 @@ class MenuFragment : Fragment() {
 
         menuViewModel.menu.observe(viewLifecycleOwner){newValue ->
             recyclerViewMenu.layoutManager = LinearLayoutManager(requireContext())
-            recyclerViewMenu.adapter = DaftarMenuAdapter(newValue,requireContext())
+            recyclerViewMenu.adapter = DaftarMenuAdapter(newValue,requireContext(),requireActivity().supportFragmentManager)
             if (newValue.size != 0){
                 circularProges.visibility = View.GONE
             }
         }
 
         btnAdd.setOnClickListener {
-            val transaki  = fragmentManager!!.beginTransaction()
+            val transaki  = requireActivity().supportFragmentManager.beginTransaction()
             val fragmentAdd = TambahMenuFragment()
             transaki.replace(R.id.fragmentContainerView,fragmentAdd)
             transaki.addToBackStack(null)
