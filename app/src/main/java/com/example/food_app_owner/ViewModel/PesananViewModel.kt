@@ -20,6 +20,11 @@ class PesananViewModel : ViewModel() {
     val listDetail: LiveData<MutableList<pesananUser>>
         get() = _listdetail
 
+    private var kategori: MutableLiveData<String> = MutableLiveData("")
+
+    val getKategori: LiveData<String>
+        get() = kategori
+
     fun clear(){
         _listdetail.value!!.clear()
     }
@@ -29,6 +34,10 @@ class PesananViewModel : ViewModel() {
             _listdetail.value!!.add(i)
         }
 
+    }
+
+    fun setKategori(kategoriBaru: String){
+        kategori.value = kategoriBaru
     }
 
 

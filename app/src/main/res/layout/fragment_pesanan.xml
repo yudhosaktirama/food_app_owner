@@ -68,5 +68,17 @@
         app:layout_constraintStart_toStartOf="@+id/pesananRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <Spinner
+        android:id="@+id/spinPesan"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:entries="@array/list_status_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

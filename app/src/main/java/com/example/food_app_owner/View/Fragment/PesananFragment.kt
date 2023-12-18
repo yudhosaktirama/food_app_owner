@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ProgressBar
+import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +29,7 @@ import java.awt.font.NumericShaper
 class PesananFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var circularProgress: ProgressBar
+    lateinit var dropdown: Spinner
     val pesananViewModel: PesananViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,7 @@ class PesananFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.pesananRecyclerView)
         circularProgress = view.findViewById(R.id.progressBar2)
+        dropdown = view.findViewById(R.id.spinPesan)
 
         pesananViewModel.listPesanan.observe(viewLifecycleOwner){NewValue ->
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -56,6 +60,32 @@ class PesananFragment : Fragment() {
             }
 
         }
+
+        dropdown.onItemSelectedListener = object : AdapterView.OnItemClickListener,
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, posisi: Int, p3: Long) {
+                pesananViewModel.setKategori( resources.getStringArray(R.array.list_status_filter)[posisi])
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+            override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+            }
+
+        }
+
+        pesananViewModel.getKategori.observe(viewLifecycleOwner){kategoriBaru ->
+                if (kategoriBaru == "Semua"){
+                    GlobalScope.launch { getPesanan() }
+                }else{
+                    GlobalScope.launch { filterPesanan(kategoriBaru)}
+                }
+        }
+
+
 
         GlobalScope.launch { getPesanan() }
 
@@ -100,5 +130,33 @@ class PesananFragment : Fragment() {
             e.printStackTrace()
         }
 
+    }
+    suspend fun filterPesanan(kategori: String){
+        val database = FirebaseFirestore.getInstance()
+        val data = database.collection("pesanan").whereEqualTo("status",kategori).get().await()
+        withContext(Dispatchers.IO){
+            data?.let { document ->
+                val  listFilter = document.map { doc ->
+                    val listPesananUser = (doc.get("pesanan_user") as List<Map<String,Any>>).map {pesanan ->
+                        pesananUser(
+                            pesanan["namaMakanan"] as? String?: "",
+                            (pesanan["jumlah"] as? Number)?.toInt() ?: 0,
+                            (pesanan["hargaSatuan"] as? Number)?.toInt() ?: 0,
+                            (pesanan["harga"] as? Number)?.toInt() ?: 0,
+
+                            )
+
+                    }?: emptyList()
+                    Pesanan(doc.id,
+                        doc.getString("nama")?: "",
+                        doc.getString("alamat")?:"",
+                        listPesananUser,
+                        doc.getString("status")?:"",
+                        (doc["harga_total"] as? Number)?.toInt()?:0
+                    )
+                }
+                pesananViewModel._listPesanan.postValue(listFilter.toMutableList())
+            }
+        }
     }
 }

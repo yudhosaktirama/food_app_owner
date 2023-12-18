@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="list_status">
-        <item>Sedang Dibuat</item>
+        <item>Sedang dibuat</item>
         <item>Sedang Diantar</item>
         <item>Selesai</item>
     </string-array>
@@ -12,5 +12,12 @@
         <item>Makanan</item>
         <item>Minuman</item>
         <item>Dessert</item>
+    </string-array>
+
+    <string-array name="list_status_filter">
+        <item>Sedang dibuat</item>
+        <item>Sedang Diantar</item>
+        <item>Selesai</item>
+        <item>Semua</item>
     </string-array>
 </resources>
